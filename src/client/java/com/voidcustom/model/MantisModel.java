@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 public class MantisModel extends EntityModel<@NotNull MantisRenderState> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation MANTIS = new ModelLayerLocation(Voidcustom.id("mantis"), "main");
+
+    private final ModelPart root;
     private final ModelPart mantis;
     private final ModelPart head;
 
@@ -31,7 +33,8 @@ public class MantisModel extends EntityModel<@NotNull MantisRenderState> {
 
     public MantisModel(ModelPart root) {
         super(root);
-        this.mantis = root.getChild("mantis");
+        this.root = root.getChild("root");
+        this.mantis = this.root.getChild("mantis");
         this.head = this.mantis.getChild("head");
 
         walkAnim = MantisAnimations.Walk.bake(root);
