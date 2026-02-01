@@ -6,6 +6,13 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 5.0,
+              "function": "minecraft:set_count"
+            }
+          ],
           "name": "minecraft:diamond"
         },
         {

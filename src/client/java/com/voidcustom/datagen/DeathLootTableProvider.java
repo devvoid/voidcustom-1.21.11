@@ -52,7 +52,8 @@ public class DeathLootTableProvider extends SimpleFabricLootTableProvider {
         consumer.accept(ModLootTables.LOOT_BAG_RARE, LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(Items.DIAMOND))
+                        .add(LootItem.lootTableItem(Items.DIAMOND)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                         .add(LootItem.lootTableItem(ModItems.HOMUNCULUS))
                 )
         );

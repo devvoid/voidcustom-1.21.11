@@ -2,6 +2,8 @@ package com.voidcustom.entities;
 
 import com.voidcustom.Voidcustom;
 import com.voidcustom.items.ModItems;
+import com.voidcustom.items.components.LootBagComponent;
+import com.voidcustom.items.components.ModComponents;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -18,6 +20,7 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.npc.villager.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
@@ -31,7 +34,24 @@ import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.Nullable;
 
+import java.util.List;
+
 public class Ilix extends PathfinderMob implements NeutralMob, Merchant {
+    public static final List<ItemCost> COSTS = List.of(
+            new ItemCost(Items.CHICKEN, 1),
+            new ItemCost(Items.CHICKEN, 2),
+            new ItemCost(Items.CHICKEN, 3),
+            new ItemCost(Items.CHICKEN, 4),
+            new ItemCost(Items.BEEF, 1),
+            new ItemCost(Items.BEEF, 2),
+            new ItemCost(Items.BEEF, 3),
+            new ItemCost(Items.BEEF, 4),
+            new ItemCost(Items.PORKCHOP, 1),
+            new ItemCost(Items.PORKCHOP, 2),
+            new ItemCost(Items.PORKCHOP, 3),
+            new ItemCost(Items.PORKCHOP, 4)
+    );
+
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
@@ -178,14 +198,28 @@ public class Ilix extends PathfinderMob implements NeutralMob, Merchant {
         var trades = this.getOffers();
 
         //Voidcustom.LOGGER.info("OFFER DATA:\n Demand: {}\nMax uses: {}\nPrice multiplier: {}\nXP awarded: {}", o.getDemand(), o.getMaxUses(), o.getPriceMultiplier(), o.getXp());
+        for(var i = 0; i < 8; i++) {
+            var f = serverLevel.getRandom().nextFloat();
 
-        trades.add(new MerchantOffer(
-                new ItemCost(Items.STICK),
-                Items.POISONOUS_POTATO.getDefaultInstance(),
-                4,
-                12,
-                1.0F
-        ));
+            // By default, a common trade
+            var bag = ModItems.LOOT_BAG.getDefaultInstance();
+
+            if (f < 0.15F) {
+                bag.set(ModComponents.LOOT_BAG, LootBagComponent.RARE);
+            } else if (f < 0.4F) {
+                bag.set(ModComponents.LOOT_BAG, LootBagComponent.UNCOMMON);
+            }
+
+            var cost = COSTS.get(serverLevel.getRandom().nextInt(COSTS.size()));
+
+            trades.add(new MerchantOffer(
+                    cost,
+                    bag,
+                    1,
+                    12,
+                    1.0F
+            ));
+        }
     }
 
     @Override
