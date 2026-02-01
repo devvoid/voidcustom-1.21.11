@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voidcustom:block/cobblestone_rock_roast",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "voidcustom:block/cobblestone_rock_roast"
+    },
+    "facing=south": {
+      "model": "voidcustom:block/cobblestone_rock_roast",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voidcustom:block/cobblestone_rock_roast",
+      "y": 270
+    }
+  }
+}

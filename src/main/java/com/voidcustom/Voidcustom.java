@@ -1,5 +1,6 @@
 package com.voidcustom;
 
+import com.voidcustom.blocks.ModBlocks;
 import com.voidcustom.entities.MantisEntity;
 import com.voidcustom.entities.ModEntities;
 import com.voidcustom.items.ModItems;
@@ -28,8 +29,9 @@ public class Voidcustom implements ModInitializer {
 	public void onInitialize() {
         ModComponents.initialize();
 		ModItems.initialize();
+        ModBlocks.initialize();
         ModEntities.initialize();
 
-		LOGGER.info("Hello Fabric world!");
+		//LOGGER.info("Hello Fabric world!");
 	}
 }

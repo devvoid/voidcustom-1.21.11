@@ -1,0 +1,5 @@
+// 1.21.11	-999999999-01-01T00:00:00	voidcustom/Block Loot Tables
+b137032cfd2e6dff9c04c8d4ade74c175253ce39 data/voidcustom/loot_table/blocks/cobblestone_rock_roast.json
+54eb9371b57fcb0560a565936e4fa67c1b4ce02b data/voidcustom/loot_table/blocks/copper_rock_roast.json
+6e82e390271f39767c59b58d99ffb8b2d8868b18 data/voidcustom/loot_table/blocks/gold_rock_roast.json
+3ac4c8ed1346cafc0b993c71e22aa1b46889051d data/voidcustom/loot_table/blocks/iron_rock_roast.json

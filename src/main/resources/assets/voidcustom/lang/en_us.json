@@ -5,6 +5,11 @@
   "item.voidcustom.homunculus_belly.sated": "Sated",
   "item.voidcustom.homunculus_belly.engorged": "Engorged",
 
+  "block.voidcustom.cobblestone_rock_roast": "Cobblestone Rock Roast",
+  "block.voidcustom.copper_rock_roast": "Copper Rock Roast",
+  "block.voidcustom.iron_rock_roast": "Iron Rock Roast",
+  "block.voidcustom.gold_rock_roast": "Gold Rock Roast",
+
   "item.voidcustom.ilix_meat": "Ilix Meat",
   "item.voidcustom.ilix_milk_bucket": "Ilix Milk Bucket",
 

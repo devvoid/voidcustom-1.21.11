@@ -1,0 +1,6 @@
+{
+  "parent": "voidcustom:block/template_rock_roast",
+  "textures": {
+    "texture": "voidcustom:block/rock_roast_iron"
+  }
+}

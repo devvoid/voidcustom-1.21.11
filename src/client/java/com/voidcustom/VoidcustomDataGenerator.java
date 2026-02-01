@@ -1,7 +1,6 @@
 package com.voidcustom;
 
-import com.voidcustom.datagen.LootTableProvider;
-import com.voidcustom.datagen.ModelProvider;
+import com.voidcustom.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -10,6 +9,9 @@ public class VoidcustomDataGenerator implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         var pack = fabricDataGenerator.createPack();
         pack.addProvider(ModelProvider::new);
-        pack.addProvider(LootTableProvider::new);
+        pack.addProvider(DeathLootTableProvider::new);
+        pack.addProvider(BlockLootTableProvider::new);
+        pack.addProvider(BlockTagProvider::new);
+        pack.addProvider(ModRecipeProvider::new);
 	}
 }
