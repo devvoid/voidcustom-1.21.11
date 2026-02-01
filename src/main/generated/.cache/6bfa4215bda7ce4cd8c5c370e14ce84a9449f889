@@ -1,4 +1,8 @@
 // 1.21.11	-999999999-01-01T00:00:00	voidcustom/VoidCustomModelProvider
 752d4adcd3315d6e31534263b6359e58324055fb assets/voidcustom/items/homunculus.json
+b45272aa9de63437262c7d9fe439921530c79cc0 assets/voidcustom/items/ilix_meat.json
+51d33733909ca095c239e994e8fd4e8fda008f13 assets/voidcustom/items/ilix_milk_bucket.json
 a563f17c58234dea9078f3bf680469effd556f62 assets/voidcustom/models/item/homunculus.json
 5a003759c564e0a4a9ae865797ed766fe27fbdec assets/voidcustom/models/item/homunculus_squished.json
+594cb01a1671086770835be49a013bd3b31c2166 assets/voidcustom/models/item/ilix_meat.json
+25147501622e18fe0c1d38f63fc2daed9ce84598 assets/voidcustom/models/item/ilix_milk_bucket.json

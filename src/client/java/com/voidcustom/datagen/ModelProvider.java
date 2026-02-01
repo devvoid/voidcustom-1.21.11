@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,6 +28,9 @@ public class ModelProvider extends FabricModelProvider {
                 ItemModelUtils.plainModel(modelGen.createFlatItemModel(ModItems.HOMUNCULUS, "_squished", ModelTemplates.FLAT_ITEM)),
                 ItemModelUtils.plainModel(modelGen.createFlatItemModel(ModItems.HOMUNCULUS, ModelTemplates.FLAT_ITEM))
         );
+
+        modelGen.generateFlatItem(ModItems.ILIX_MEAT, ModelTemplates.FLAT_ITEM);
+        modelGen.generateFlatItem(ModItems.ILIX_MILK_BUCKET, ModelTemplates.FLAT_ITEM);
     }
 
     public @NotNull String getName() {

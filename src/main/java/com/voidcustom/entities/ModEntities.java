@@ -25,9 +25,18 @@ public class ModEntities {
                     .clientTrackingRange(10)
     );
 
+    public static final EntityType<@NotNull Ilix> ILIX = register(
+            "ilix",
+            EntityType.Builder.of(Ilix::new, MobCategory.MISC)
+                    .sized(0.8F, 2F)
+                    .eyeHeight(1.6F)
+                    .clientTrackingRange(10)
+    );
+
     public static void initialize()
     {
         FabricDefaultAttributeRegistry.register(MANTIS, MantisEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ILIX, Ilix.createAttributes());
     }
 
     private static <T extends Entity> EntityType<@NotNull T> register(String name, EntityType.Builder<T> builder)

@@ -3,5 +3,10 @@
   "item.voidcustom.homunculus_belly.starving": "Starving",
   "item.voidcustom.homunculus_belly.nourished": "Nourished",
   "item.voidcustom.homunculus_belly.sated": "Sated",
-  "item.voidcustom.homunculus_belly.engorged": "Engorged"
+  "item.voidcustom.homunculus_belly.engorged": "Engorged",
+
+  "item.voidcustom.ilix_meat": "Ilix Meat",
+  "item.voidcustom.ilix_milk_bucket": "Ilix Milk Bucket",
+
+  "entity.voidcustom.ilix": "Ilix"
 }

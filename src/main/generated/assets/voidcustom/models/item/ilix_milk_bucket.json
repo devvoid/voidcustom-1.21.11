@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "voidcustom:item/ilix_milk_bucket"
+  }
+}

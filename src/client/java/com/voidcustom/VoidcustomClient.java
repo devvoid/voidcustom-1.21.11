@@ -1,7 +1,9 @@
 package com.voidcustom;
 
 import com.voidcustom.entities.ModEntities;
+import com.voidcustom.model.IlixModel;
 import com.voidcustom.model.MantisModel;
+import com.voidcustom.renderer.IlixRenderer;
 import com.voidcustom.renderer.MantisRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -13,5 +15,8 @@ public class VoidcustomClient implements ClientModInitializer {
 	public void onInitializeClient() {
         EntityModelLayerRegistry.registerModelLayer(MantisModel.MANTIS, MantisModel::createBodyLayer);
         EntityRenderers.register(ModEntities.MANTIS, MantisRenderer::new);
+
+        EntityModelLayerRegistry.registerModelLayer(IlixModel.ILIX, IlixModel::createBodyLayer);
+        EntityRenderers.register(ModEntities.ILIX, IlixRenderer::new);
 	}
 }

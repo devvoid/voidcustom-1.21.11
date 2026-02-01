@@ -15,13 +15,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.Nullable;
 
 public class MantisEntity extends Animal {
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
-    public MantisEntity(EntityType<? extends Animal> entityType, Level level) {
+    public MantisEntity(EntityType<? extends @NotNull Animal> entityType, Level level) {
         super(entityType, level);
     }
 
@@ -40,7 +41,8 @@ public class MantisEntity extends Animal {
     {
         return createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 2)
-                .add(Attributes.MOVEMENT_SPEED, 0.35);
+                .add(Attributes.MOVEMENT_SPEED, 0.35)
+                .add(Attributes.TEMPT_RANGE, 20);
     }
 
     private void setupAnimationStates() {
@@ -53,7 +55,7 @@ public class MantisEntity extends Animal {
     }
 
     @Override
-    public void aiStep() {
+    public void tick() {
         super.tick();
 
         if (this.level().isClientSide()) {
