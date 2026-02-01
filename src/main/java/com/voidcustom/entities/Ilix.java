@@ -20,6 +20,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.Nullable;
 
 public class Ilix extends PathfinderMob implements NeutralMob {
+    public final AnimationState idleAnimationState = new AnimationState();
+    private int idleAnimationTimeout = 0;
+
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
     private long persistentAngerEndTime;
     @Nullable
@@ -53,12 +56,12 @@ public class Ilix extends PathfinderMob implements NeutralMob {
     }
 
     private void setupAnimationStates() {
-//        if (this.idleAnimationTimeout <= 0) {
-//            this.idleAnimationTimeout = 40;
-//            this.idleAnimationState.start(this.age);
-//        } else {
-//            this.idleAnimationTimeout -= 1;
-//        }
+        if (this.idleAnimationTimeout <= 0) {
+            this.idleAnimationTimeout = 80;
+            this.idleAnimationState.start(this.tickCount);
+        } else {
+            this.idleAnimationTimeout -= 1;
+        }
     }
 
     @Override
