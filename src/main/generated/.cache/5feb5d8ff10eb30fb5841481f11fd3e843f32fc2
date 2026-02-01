@@ -1,2 +1,5 @@
 // 1.21.11	-999999999-01-01T00:00:00	voidcustom/minecraft:entity Loot Table
+197b4e67b7206f56cf6315102aa3063fdd100c48 data/voidcustom/loot_table/bag/common.json
+bac06fba39a118fd39c4c0b3fa2cdfcc2fbc7e81 data/voidcustom/loot_table/bag/rare.json
+43fcd35f79991cd9ed60b8bcdd849e49dfbc6d98 data/voidcustom/loot_table/bag/uncommon.json
 9bc4a41e776df9b531d57918bd8224c84a44c7f1 data/voidcustom/loot_table/entities/ilix.json

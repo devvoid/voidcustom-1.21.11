@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -30,6 +31,30 @@ public class DeathLootTableProvider extends SimpleFabricLootTableProvider {
                         .add(LootItem.lootTableItem(ModItems.ILIX_MEAT)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 5.0f)))
                         ))
+        );
+
+        consumer.accept(ModLootTables.LOOT_BAG_COMMON, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(ModItems.ILIX_MEAT))
+                        .add(LootItem.lootTableItem(ModItems.ILIX_MILK_BUCKET))
+                )
+        );
+
+        consumer.accept(ModLootTables.LOOT_BAG_UNCOMMON, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Items.GOLD_INGOT))
+                        .add(LootItem.lootTableItem(Items.IRON_INGOT))
+                )
+        );
+
+        consumer.accept(ModLootTables.LOOT_BAG_RARE, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Items.DIAMOND))
+                        .add(LootItem.lootTableItem(ModItems.HOMUNCULUS))
+                )
         );
     }
 }

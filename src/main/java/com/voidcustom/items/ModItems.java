@@ -1,7 +1,9 @@
 package com.voidcustom.items;
 
 import com.voidcustom.Voidcustom;
+import com.voidcustom.data.ModLootTables;
 import com.voidcustom.items.components.HomunculusBelly;
+import com.voidcustom.items.components.LootBagComponent;
 import com.voidcustom.items.components.ModComponents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
@@ -23,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Function;
 
 public class ModItems {
-    public static Item HOMUNCULUS = registerItem("homunculus", Homunculus::new, new Item.Properties().stacksTo(1).component(ModComponents.HOMUNCULUS_BELLY, HomunculusBelly.EMPTY));
+    public static Item HOMUNCULUS = registerItem("homunculus", HomunculusItem::new, new Item.Properties().stacksTo(1).component(ModComponents.HOMUNCULUS_BELLY, HomunculusBelly.EMPTY));
 
     public static Item ILIX_MEAT = registerItem("ilix_meat",
             new Item.Properties()
@@ -37,7 +39,9 @@ public class ModItems {
                     .usingConvertsTo(Items.BUCKET)
                     .stacksTo(1)
     );
-    //Item.Properties().craftRemainder(BUCKET).component(DataComponents.CONSUMABLE, Consumables.MILK_BUCKET).usingConvertsTo(BUCKET).stacksTo(1)
+
+    public static Item LOOT_BAG = registerItem("loot_bag", LootBagItem::new,
+            new Item.Properties().component(ModComponents.LOOT_BAG, new LootBagComponent(ModLootTables.LOOT_BAG_COMMON)));
     public static void initialize() {}
 
     private static ResourceKey<@NotNull Item> makeId(String name)

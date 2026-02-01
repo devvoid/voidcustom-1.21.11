@@ -50,6 +50,7 @@ public class ModelProvider extends FabricModelProvider {
 
         modelGen.generateFlatItem(ModItems.ILIX_MEAT, ModelTemplates.FLAT_ITEM);
         modelGen.generateFlatItem(ModItems.ILIX_MILK_BUCKET, ModelTemplates.FLAT_ITEM);
+        modelGen.generateFlatItem(ModItems.LOOT_BAG, ModelTemplates.FLAT_ITEM);
     }
 
     public @NotNull String getName() {

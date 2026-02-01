@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "voidcustom:ilix_meat"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "voidcustom:ilix_milk_bucket"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

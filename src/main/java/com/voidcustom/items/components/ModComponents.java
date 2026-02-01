@@ -20,6 +20,11 @@ public class ModComponents {
             builder -> builder.persistent(HomunculusBelly.CODEC).networkSynchronized(HomunculusBelly.STREAM_CODEC).cacheEncoding()
             );
 
+    public static final DataComponentType<@NotNull LootBagComponent> LOOT_BAG = register(
+            "loot_bag",
+            builder -> builder.persistent(LootBagComponent.CODEC).cacheEncoding()
+    );
+
     public static void initialize() {
         ComponentTooltipAppenderRegistry.addAfter(
                 DataComponents.DAMAGE,
